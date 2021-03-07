@@ -4,6 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 from .config import Config
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "abc123"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://user:password@localhost/database"
+
 
 db = SQLAlchemy(app)
 
